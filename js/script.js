@@ -37,47 +37,51 @@ generateElement.addEventListener('click', function () {
 
     //Validazione
     //Se l'utente non inserisce i dati il programma si BLOCCA e stampa messaggio
-    if(!nameInputElement.value || !distanceInputElement.value || agesElement.value === '--'){
+    if (!nameInputElement.value || !distanceInputElement.value || agesElement.value === '--') {
         alert('Inserisci dati');
-    }
-
-
-    const nameValue = nameInputElement.value;
-    nameElement.innerText = nameValue;
-
-    //creo varibile numero random carrozza
-    const trainNumberValue = Math.floor(Math.random() * 10);
-    trainElement.innerText = trainNumberValue;
-
-    //creo varibile numero random codice cp
-    const codeNumberValue = Math.floor(Math.random() * 1000);
-    codeElement.innerText = codeNumberValue;
-
-    //calcolo prezzo del biglietto a km
-    let price = 0.21 * distanceInputElement.value;
-    console.log(price);
-
-    //variabile di appoggio
-    totalprice = price;
-
-    //condizione 
-    //se è minorenne
-    if (agesElement.value === 'minorenne') {
-        //applico sconto del 20%
-        totalprice = price * (20 / 100);
-        console.log('prezzo scontato minorenni', totalprice.toFixed(2));
-        priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€<h1>`;
-        ticketElement.innerText = 'SCONTO MINORENNI 20%';
-    } else if (agesElement.value === 'over65') {
-        //altrimenti se è over 65 applico sconto del  40%
-        totalprice = price * (40 / 100);
-        console.log('prezzo scontato over 65', totalprice.toFixed(2));
-        priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€</h1>`;
-        ticketElement.innerHTML = 'SCONTO OVER 65';
     } else {
-        //altrimenti applico prezzo intero
-        priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€</h1>`;
-        ticketElement.innerHTML = 'BIGLIETTO STANDARD';
+
+
+
+
+        const nameValue = nameInputElement.value;
+        nameElement.innerText = nameValue;
+
+        //creo varibile numero random carrozza
+        const trainNumberValue = Math.floor(Math.random() * 10);
+        trainElement.innerText = trainNumberValue;
+
+        //creo varibile numero random codice cp
+        const codeNumberValue = Math.floor(Math.random() * 1000);
+        codeElement.innerText = codeNumberValue;
+
+        //calcolo prezzo del biglietto a km
+        let price = 0.21 * distanceInputElement.value;
+        console.log(price);
+
+        //variabile di appoggio
+        totalprice = price;
+
+        //condizione 
+        //se è minorenne
+        if (agesElement.value === 'minorenne') {
+            //applico sconto del 20%
+            totalprice = price * (20 / 100);
+            console.log('prezzo scontato minorenni', totalprice.toFixed(2));
+            priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€<h1>`;
+            ticketElement.innerText = 'SCONTO MINORENNI 20%';
+        } else if (agesElement.value === 'over65') {
+            //altrimenti se è over 65 applico sconto del  40%
+            totalprice = price * (40 / 100);
+            console.log('prezzo scontato over 65', totalprice.toFixed(2));
+            priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€</h1>`;
+            ticketElement.innerHTML = 'SCONTO OVER 65';
+        } else {
+            //altrimenti applico prezzo intero
+            priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€</h1>`;
+            ticketElement.innerHTML = 'BIGLIETTO STANDARD';
+
+        }
 
     }
 });
