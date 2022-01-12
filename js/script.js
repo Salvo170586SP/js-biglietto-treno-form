@@ -15,15 +15,16 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina
 */
 
 //recupero elementi
-const nameElement = document.getElementById('user-name');
+const nameInputElement = document.getElementById('user-name');
 const distanceElement = document.getElementById('distance');
 const agesElement = document.getElementById('ages-menu');
 const generateElement = document.getElementById('generate');
 const resetElement = document.getElementById('reset');
+const nameElement = document.getElementById('customer-name');
 
 
 generateElement.addEventListener('click', function(){
     console.log('click');
-    const nameValue = nameElement.value;
-    console.log(nameValue);
+    const nameValue = nameInputElement.value;
+    nameElement.innerText = nameValue;
 })

@@ -10,6 +10,10 @@ body{
 }
 
 
+p{
+    margin-bottom: 20px;
+}
+
 .box-calculator{
     margin-bottom: 20px;
 }
@@ -22,8 +26,5 @@ button{
     margin-right: 20px;
 }
 .box-ticket{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-
+    margin-top: 20px;
 }
