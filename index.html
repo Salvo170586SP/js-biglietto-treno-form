@@ -12,16 +12,16 @@
 <body>
   <div class="box-calculator">
     <label for="date-user">NOME E COGNOME</label>
-    <input type="text" id="user-name">
+    <input type="text" id="user-name" name="user-name">
 
     <label for="distance">KM DA PERCORRERE</label>
-    <input type="number" id="distance">
+    <input type="number" id="distance" name="distance">
 
-    <label for="age-menu">FASCIA D'ETA'</label>
-    <select id="age-menu">
+    <label for="ages-menu">FASCIA D'ETA'</label>
+    <select id="ages-menu">
       <option>--</option>
-      <option>Maggiorenne</option>
-      <option>Minorenne</option>
+      <option value="maggiorenne">Maggiorenne</option>
+      <option value="minorenne">Minorenne</option>
     </select>
   </div>
 
@@ -30,6 +30,7 @@
     <button id="reset">ANNULLA</button>
   </div>
 
+  <hr>
 
   <div class="box-ticket">
     <h3>Carrozza</h3>

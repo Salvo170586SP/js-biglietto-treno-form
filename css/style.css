@@ -14,6 +14,10 @@ body{
     margin-bottom: 20px;
 }
 
+.actions-bt{
+    padding: 10px;
+}
+
 button{
     margin-right: 20px;
 }
