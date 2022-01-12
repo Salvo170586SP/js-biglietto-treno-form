@@ -5,50 +5,144 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css" />
   <title>Biglietto treno form</title>
 </head>
 
 <body>
-  <div class="box-calculator">
-    <label for="date-user">NOME E COGNOME</label>
-    <input type="text" id="user-name" name="user-name">
+  <!-- header -->
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col py-3 text-light text-center">
+          <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <label for="distance">KM DA PERCORRERE</label>
-    <input type="number" id="distance" name="distance">
+  <div class="main">
+    <div class="container">
+      <div class="row mb-5 text-center">
+        <div class="col">
 
-    <label for="ages-menu">FASCIA D'ETA'</label>
-    <select id="ages-menu">
-      <option value="minorenne">Minorenne</option>
-      <option value="maggiorenne">Maggiorenne</option>
-      <option value="over65">Over65</option>
-    </select>
+          <!-- box calcolo biglietto -->
+          <div class="box-calculator bg-light  px-3">
+            <div class="row">
+              <div class="col-4 py-4 d-flex flex-column">
+                <!-- input nome e cognome -->
+                <label for="date-user">NOME E COGNOME</label>
+                <input type="text" id="user-name" name="user-name">
+              </div>
+              <div class="col-4 py-4 d-flex flex-column">
+                <!-- input distanza -->
+                <label for="distance">KM DA PERCORRERE</label>
+                <input type="number" id="distance" name="distance">
+              </div>
+              <div class="col-4 py-4 d-flex flex-column">
+                <!-- input età -->
+                <label for="ages-menu">FASCIA D'ETA'</label>
+                <select id="ages-menu">
+                  <option value="minorenne">Minorenne</option>
+                  <option value="maggiorenne">Maggiorenne</option>
+                  <option value="over65">Over65</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="actions-bt">
+                  <!-- bottoni -->
+                  <button id="generate" class="btn btn-secondary">GENERA</button>
+                  <button id="reset" class="btn btn-secondary">ANNULLA</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sezione ticket -->
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <h1 class="text-light">IL TUO BIGLIETTO</h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- box dettagli ticket -->
+      <div class="container">
+        <div class="row bg-light h-300">
+          <div class="col">
+            <div class="row ">
+              <div class="col">
+                <h2>DETTAGLIO PASSEGGERO</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <!-- risultato nome passeggero -->
+                <div class="row">
+                  <div class="col">
+                    <h4>NOME PASSEGGERO</h4>
+                    <div class="row">
+                      <div class="col">
+                        <p id="customer-name"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- risultato tipo di bigletto -->
+                    <h4>OFFERTA</h4>
+                    <div class="row">
+                      <div class="col">
+                        <p id="ticket-type"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- risultato numero carrozza -->
+                    <h4>CARROZZA</h4>
+                    <div class="row">
+                      <div class="col">
+                        <p id="train-number"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- risultato codice biglietto -->
+                    <h4>CODICE CP</h4>
+                    <div class="row">
+                      <div class="col">
+                        <p id="code-cp"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                      <!-- risultato costo biglietto -->
+                      <h4>COSTO BIGLIETTO</h4>
+                      <div class="col">
+                        <p id="price-ticket"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="actions-bt">
-    <button id="generate">GENERA</button>
-    <button id="reset">ANNULLA</button>
-  </div>
 
-  <hr>
 
-  <div class="box-ticket">
 
-    <h3>NOME PASSEGGERO</h3>
-    <p id="customer-name"></p>
 
-    <h3>OFFERTA</h3>
-    <p id="ticket-type"></p>
-
-    <h3>CARROZZA</h3>
-    <p id="train-number"></p>
-
-    <h3>CODICE CP</h3>
-    <p id="code-cp"></p>
-
-    <h2>COSTO BIGLIETTO</h2>
-    <p id="price-ticket"></p>
-  </div>
 
   <script src="js/script.js"></script>
 </body>
