@@ -21,14 +21,9 @@ const agesElement = document.getElementById('ages-menu');
 const generateElement = document.getElementById('generate');
 const resetElement = document.getElementById('reset');
 const nameElement = document.getElementById('customer-name');
+const trainElement = document.getElementById('train-number');
+const codeElement = document.getElementById('code-cp');
 
-//creo varibile numero random carrozza
-const trainNumber = Math.floor(Math.random()*1000);
-console.log(trainElement);
-
-//creo varibile numero random codice cp
-const codeNumber = Math.floor(Math.random()*100);
-console.log(codeElement);
 
 
 
@@ -37,6 +32,13 @@ generateElement.addEventListener('click', function(){
     console.log('click');
     const nameValue = nameInputElement.value;
     nameElement.innerText = nameValue;
- 
+    
+    //creo varibile numero random carrozza
+    const trainNumberValue = Math.floor(Math.random()*1000);
+    trainElement.innerText = trainNumberValue;
+    
+    //creo varibile numero random codice cp
+    const codeNumberValue = Math.floor(Math.random()*1000);
+    codeElement.innerText = codeNumberValue;
 
-});
+ });
