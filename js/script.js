@@ -80,7 +80,6 @@ generateElement.addEventListener('click', function () {
             //altrimenti applico prezzo intero
             priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€</h1>`;
             ticketElement.innerHTML = 'BIGLIETTO STANDARD';
-
         }
 
     }
@@ -95,4 +94,5 @@ resetElement.addEventListener('click', function () {
     trainElement.innerText = '';
     codeElement.innerText = '';
     priceElement.innerText = '';
+    ticketElement.innerText = '';
 })
