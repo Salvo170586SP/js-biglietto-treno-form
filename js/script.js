@@ -35,6 +35,11 @@ const priceElement = document.getElementById('price-ticket');
 generateElement.addEventListener('click', function () {
     console.log('click');
 
+    //Validazione
+    //Se l'utente non inserisce i dati il programma si BLOCCA e stampa messaggio
+    if(!nameInputElement.value || !distanceInputElement.value || agesElement.value === '--'){
+        alert('Inserisci dati');
+    }
 
 
     const nameValue = nameInputElement.value;
