@@ -21,6 +21,7 @@ const agesElement = document.getElementById('ages-menu');
 const generateElement = document.getElementById('generate');
 const resetElement = document.getElementById('reset');
 const nameElement = document.getElementById('customer-name');
+const ticketElement = document.getElementById('ticket-type');
 const trainElement = document.getElementById('train-number');
 const codeElement = document.getElementById('code-cp');
 const priceElement = document.getElementById('price-ticket');
@@ -28,18 +29,18 @@ const priceElement = document.getElementById('price-ticket');
 
 
 
-//creo collegamento al bottone "GENERA" con l'input nome e cognome e stampo elemento in pagina
-generateElement.addEventListener('click', function(){
+//creo collegamento al bottone "GENERA" e stampo elementi in pagina
+generateElement.addEventListener('click', function () {
     console.log('click');
     const nameValue = nameInputElement.value;
     nameElement.innerText = nameValue;
-    
+
     //creo varibile numero random carrozza
-    const trainNumberValue = Math.floor(Math.random()*1000);
+    const trainNumberValue = Math.floor(Math.random() * 1000);
     trainElement.innerText = trainNumberValue;
-    
+
     //creo varibile numero random codice cp
-    const codeNumberValue = Math.floor(Math.random()*1000);
+    const codeNumberValue = Math.floor(Math.random() * 1000);
     codeElement.innerText = codeNumberValue;
 
     //calcolo prezzo del biglietto a km
@@ -51,18 +52,30 @@ generateElement.addEventListener('click', function(){
 
     //condizione 
     //se è minorenne
-    if(agesElement.value === 'minorenne'){
+    if (agesElement.value === 'minorenne') {
         //applico sconto del 20%
         totalprice = price * (20 / 100);
         console.log('prezzo scontato minorenni', totalprice.toFixed(2));
         priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€</h1> <span>prezzo scontato del 20%</span>`;
-    }else if(agesElement.value === 'over65'){
+    } else if (agesElement.value === 'over65') {
         //altrimenti se è over 65 applico sconto del  40%
         totalprice = price * (40 / 100);
         console.log('prezzo scontato maggiorenni', totalprice.toFixed(2));
         priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€</h1> <span>prezzo scontato del 40%</span>`;
-    }else{
+    } else {
+        //altrimenti applico prezzo intero
         priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€</h1>`;
+        isvalid = false;
     }
+});
 
- });
+
+//creo collegamento al bottone "ANNULLA" ed elimino gli elementi della pagina
+resetElement.addEventListener('click', function () {
+    nameInputElement.value = '';
+    distanceInputElement.value = '';
+    nameElement.innerText = '';
+    trainElement.innerText = '';
+    codeElement.innerText = '';
+    priceElement.innerText = '';
+})
