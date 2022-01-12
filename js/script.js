@@ -29,9 +29,14 @@ const priceElement = document.getElementById('price-ticket');
 
 
 
+
+
 //creo collegamento al bottone "GENERA" e stampo elementi in pagina
 generateElement.addEventListener('click', function () {
     console.log('click');
+
+
+
     const nameValue = nameInputElement.value;
     nameElement.innerText = nameValue;
 
@@ -56,16 +61,19 @@ generateElement.addEventListener('click', function () {
         //applico sconto del 20%
         totalprice = price * (20 / 100);
         console.log('prezzo scontato minorenni', totalprice.toFixed(2));
-        priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€</h1> <span>prezzo scontato del 20%</span>`;
+        priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€<h1>`;
+        ticketElement.innerText = 'SCONTO MINORENNI 20%';
     } else if (agesElement.value === 'over65') {
         //altrimenti se è over 65 applico sconto del  40%
         totalprice = price * (40 / 100);
-        console.log('prezzo scontato maggiorenni', totalprice.toFixed(2));
-        priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€</h1> <span>prezzo scontato del 40%</span>`;
+        console.log('prezzo scontato over 65', totalprice.toFixed(2));
+        priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€</h1>`;
+        ticketElement.innerHTML = 'SCONTO OVER 65';
     } else {
         //altrimenti applico prezzo intero
         priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€</h1>`;
-        isvalid = false;
+        ticketElement.innerHTML = 'BIGLIETTO STANDARD';
+
     }
 });
 
