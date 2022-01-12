@@ -41,7 +41,7 @@ generateElement.addEventListener('click', function () {
     nameElement.innerText = nameValue;
 
     //creo varibile numero random carrozza
-    const trainNumberValue = Math.floor(Math.random() * 1000);
+    const trainNumberValue = Math.floor(Math.random() * 10);
     trainElement.innerText = trainNumberValue;
 
     //creo varibile numero random codice cp
