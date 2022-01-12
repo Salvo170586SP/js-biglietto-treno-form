@@ -23,6 +23,7 @@ const resetElement = document.getElementById('reset');
 const nameElement = document.getElementById('customer-name');
 const trainElement = document.getElementById('train-number');
 const codeElement = document.getElementById('code-cp');
+const priceElement = document.getElementById('price-ticket');
 
 
 
@@ -40,5 +41,7 @@ generateElement.addEventListener('click', function(){
     //creo varibile numero random codice cp
     const codeNumberValue = Math.floor(Math.random()*1000);
     codeElement.innerText = codeNumberValue;
+
+
 
  });
