@@ -5,16 +5,43 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css" />
   <title>Biglietto treno form</title>
 </head>
 
 <body>
+  <div class="box-calculator">
+    <label for="date-user">NOME E COGNOME</label>
+    <input type="text" id="user-name">
+
+    <label for="distance">KM DA PERCORRERE</label>
+    <input type="number" id="distance">
+
+    <label for="age-menu">FASCIA D'ETA'</label>
+    <select id="age-menu">
+      <option>--</option>
+      <option>Maggiorenne</option>
+      <option>Minorenne</option>
+    </select>
+  </div>
+
+  <div class="actions-bt">
+    <button id="generate">GENERA</button>
+    <button id="reset">ANNULLA</button>
+  </div>
 
 
-  
+  <div class="box-ticket">
+    <h3>Carrozza</h3>
+    <p class="train-number"></p>
+
+    <h3>Codice CP</h3>
+    <p class="code-cp"></p>
+
+    <h3>COSTO BIGLIETTO</h3>
+    <p class="price-tiket"></p>
+  </div>
+
   <script src="js/script.js"></script>
 </body>
 

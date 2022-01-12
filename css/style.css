@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 50px auto;
+    max-width: 1080px;
+}
+
+
+.box-calculator{
+    margin-bottom: 20px;
+}
+
+button{
+    margin-right: 20px;
+}
+.box-ticket{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+
+}
