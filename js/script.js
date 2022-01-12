@@ -42,6 +42,21 @@ generateElement.addEventListener('click', function(){
     const codeNumberValue = Math.floor(Math.random()*1000);
     codeElement.innerText = codeNumberValue;
 
+    //calcolo prezzo del biglietto a km
+    let price = 0.21 * distanceInputElement.value;
+    console.log(price);
+
+    //variabile di appoggio
+    totalprice = price;
+
+    //condizione 
+    //se è minorenne
+    if(agesElement.value === 'minorenne'){
+        totalprice = price * (20 / 100);
+        console.log('prezzo scontato minorenni', totalprice.toFixed(2));
+        priceElement.innerHTML = `<h1>${totalprice.toFixed(2)}€</h1> <span>prezzo scontato del 20%</span>`;
+    }
+    
 
 
  });
